@@ -3,16 +3,28 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { TranslateComponent } from './translate/translate.component';
+import {RouterModule, Routes} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {TranslatorService} from './translator.service';
 
+const routes: Routes =  [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: TranslateComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TranslateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
-  providers: [],
+  providers: [TranslatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

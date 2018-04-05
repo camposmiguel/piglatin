@@ -1,0 +1,19 @@
+<header class="masthead d-flex">
+  <div class="container text-center my-auto">
+    <h1 class="mb-1">Pig Latin</h1>
+    <h3 class="mb-5">
+      <em>Obfuscate your code!</em>
+    </h3>
+    <div class="row">
+      <div class="col-md-6 offset-3">
+        <div class="form-group align-content-md-center">
+          <input type="text" class="form-control" id="textToTranslate" placeholder="Text to translate..." [(ngModel)]="textToTranslate" (change)="deleteTranslation()">
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-xl" (click)="doTranslate()" [disabled]="textToTranslate.length==0">Translate</button>
+    <hr/>
+    <p>{{ textTranslation }}</p>
+  </div>
+  <div class="overlay"></div>
+</header>
